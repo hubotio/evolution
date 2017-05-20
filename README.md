@@ -34,4 +34,4 @@ The high-priority features for Hubot 3.0 are:
 
 ---
 
-_Thank you to the team at Apple for laying the groundwork for this process, was inspired by and largely borrowed from [Swift Evolution](https://github.com/apple/swift-evolution)._
+_Thanks to the team at Apple for laying the groundwork for this process, which was inspired by and largely borrowed from [Swift Evolution](https://github.com/apple/swift-evolution)._

@@ -39,7 +39,9 @@ Reviews should usually be completed in a single week, but can run longer for par
 
 After feedback from the community has been gathered, the maintainers will make a decision on whether to `accept` or `reject` the proposal.
 
-Once a proposal has been accepted, it is usually up to the proposal author to implement it or discuss with the maintainers who will lead the implementation.
+Once a proposal has been accepted, the file should be renamed to `proposals/###-feature-name.md`, where `###` is the Pull Request number. It is usually up to the proposal author to implement it or discuss with the maintainers who will lead the implementation.
+
+Once a proposal has been implemented, the Pull Request will be merged.
 
 ## Proposal states
 

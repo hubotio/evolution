@@ -28,12 +28,12 @@ The Hubot maintainers are responsible for the strategic direction of Hubot. Main
 1. **Consider the goals of the upcoming release**: Each major release is focused on a [specific set of goals](README.md) described early in the release cycle. When proposing a change, please consider how your proposal fits in with the larger goals of the upcoming release. Proposals that are out of scope may still be considered, but will likely be postponed.
 1. **Socialize the idea**: Before starting the review process, it's helpful to gauge interest from the community. Ideally, the idea would have come up in a discussion in another issue or in [chat][] and the consensus was to start an evolution proposal.
 1. **Develop the proposal**: open a pull request with a rough sketch of the proposal using the [proposal template](template.md) in the [_drafts](https://github.com/hubotio/evolution/new/master/_drafts) directory. Prototyping an implementation and its uses along with the proposal is encouraged, because it helps ensure both technical feasibility of the proposal as well as validating that the proposal solves the problems it is meant to solve.
-1. **Request a review**: When you are ready for feedback from the Hubot community, change the frontmatter in your proposal from `status: in-progress` to `status: ready-for-review`.
+1. **Request a review**: When you are ready for feedback from the Hubot community, change the frontmatter in your proposal from `status: in-progress` to `status: in-review`.
 1. **Address feedback**: be responsive to questions and feedback about the proposal. When the proposal is sufficiently detailed and clear, and addresses feedback from earlier discussions of the idea, the `accepted` label will be added and a maintainer will be assigned to manage the review.
 
 ## Review process
 
-When you change the frontmatter in your proposal from `status: in-progress` to `status: ready-for-review`, a message will be posted in the [#evolution channel in chat][chat] requesting feedback from the community.
+When you change the frontmatter in your proposal from `status: in-progress` to `status: in-review`, a message will be posted in the [#evolution channel in chat][chat] requesting feedback from the community.
 
 Reviews should usually be completed in a single week, but can run longer for particularly large or complex proposals. To avoid delays, it is important that the proposal authors be available to answer questions, address feedback, and clarify their intent during the review period.
 
@@ -44,7 +44,7 @@ After feedback from the community has been gathered, the maintainers will make a
 A proposal can be in one of several states:
 
 * `in-progress`: The authors are still working on the proposal and are not yet ready for review.
-* `ready-for-review`: The proposal is ready for review and comments from the community.
+* `in-review`: The proposal is ready for review and comments from the community.
 * `withdrawn`: The proposal has been withdrawn by the original submitter.
 * `deferred`: Consideration of the proposal has been deferred because it does not meet the [goals of the upcoming release](README.md). Deferred proposals will be reconsidered when scoping the next major release.
 * `accepted`: The proposal has been accepted and is either awaiting implementation or is actively being implemented.

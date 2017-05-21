@@ -1,5 +1,5 @@
 ---
-status: in-progress
+state: In Progress
 ---
 
 # Feature name

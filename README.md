@@ -5,7 +5,7 @@
 This repository tracks the ongoing evolution of Hubot. It contains:
 
 * Goals for upcoming releases. Up next: [3.0](#hubot-3.0)
-* [Proposals](https://github.com/hubotio/evolution/pulls) to change Hubot
+* [Proposals](https://github.com/hubotio/evolution/projects/1) to change Hubot
 * The [process](CONTRIBUTING.md) that governs the evolution of Hubot.
 
 This document describes goals on a per-release basis, usually listing minor releases adding to the currently shipping version and one major release out. Each release will have many smaller features or changes independent of these larger goals, and not all goals are reached for each release.

@@ -1,0 +1,8 @@
+states:
+- in-progress
+- in-review
+- withdrawn
+- deferred
+- accepted
+- rejected
+- implemented

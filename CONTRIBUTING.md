@@ -1,6 +1,6 @@
 # Hubot Evolution Process
 
-[all-proposals]: https://github.com/hubotio/evolution/pulls?utf8=%E2%9C%93&q=is%3Apr
+[all-proposals]: https://github.com/hubotio/evolution/projects/1
 [chat]: https://hubot-slackin.herokuapp.com/
 
 This document outlines how a Hubot feature grows from a rough idea into something that can improve workflows for millions of developers.

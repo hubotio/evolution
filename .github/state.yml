@@ -1,3 +1,4 @@
+# Configuration for Probot state plugin - https://github.com/probot/state
 states:
 - in-progress
 - in-review

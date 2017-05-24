@@ -1,0 +1,11 @@
+# Configuration for Probot state plugin - https://github.com/probot/state
+states:
+- In Progress
+- In Review
+- Withdrawn
+- Deferred
+- Accepted
+- Rejected
+- Implemented
+
+project: Proposals

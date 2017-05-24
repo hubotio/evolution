@@ -2,7 +2,7 @@
 
 [proposal-status]: https://apple.github.io/swift-evolution/
 
-This repository tracks the ongoing evolution of Hubot. It contains:
+This repository tracks the ongoing evolution of [Hubot](https://github.com/github/hubot). It contains:
 
 * Goals for upcoming releases. Up next: [3.0](#hubot-3.0)
 * [Proposals](https://github.com/hubotio/evolution/projects/1) to change Hubot

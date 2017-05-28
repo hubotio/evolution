@@ -4,13 +4,13 @@ state: In Progress
 
 # Programmatic configuration of bots
 
-A programmatically configured hubot would allow for developers to write a index.coffee (or Javascript-VM-language-of-choice file) to build their bot step-by-step, and have full control of the order of that scripts are loaded, in addition to allowing customizing things like the built-in [expressjs](https://expressjs.com/) router and the nodejs VM.
+A programmatically configured hubot would allow for developers to write a index.coffee (or Javascript-VM-language-of-choice file) to build their bot step-by-step. This would give fine-grained control of a Hubot instance, such as control of the script load order, customization of the built-in [Express](https://expressjs.com/) router, tuning and instrumentation of the Node.js VM.
 
 ## Motivation
 
-The only way you can have hubot run your code is by having it in the `scripts`, or specified in `external-scripts.json` (and the deprecated `hubot-scripts.json`). This means there is not an obvious place to inject framework-level customizations (like an install-specific `robot` helper function).
+Hubot runs your code is by having it in a `scripts` directory, or specified in `external-scripts.json` (and the deprecated `hubot-scripts.json`). This means there is not an obvious place to inject framework-level customizations (like an install-specific `robot` helper function).
 
-The current workaround is to name script files in a way that they are more likely to be loaded first. Consider:
+Hubot loads scripts alphabetically in the script directory, so the current workaround is to make a script file named that Hubot will load first. Consider:
 
 ```coffeescript
 # scripts/0-myawesomehelper.coffee
@@ -23,12 +23,11 @@ module.exports = (robot) ->
   robot.myawesomehelper()
 ```
 
-There are some tools that need to be loaded as soon as possible to instrument as much as possible, such as [New Relic](https://newrelic.com/). There is no way currently to load that any sooner. [hubot#847](https://github.com/github/hubot/issues/847) is one example of this.
+Some tools need to be initialized as soon as possible to instrument as much as possible. There's no easy way to load that any sooner than when Hubot starts loading scripts. [hubot#847](https://github.com/github/hubot/issues/847) is one example of this, where the user wants to instrument Hubot with [New Relic](https://newrelic.com/), but it can't be loaded soon enough to be effective.
 
-Hubot includes an instance of [expressjs](https://expressjs.com/) in it, for convenience in integrating with other services, and also because some adapters need it. Since it is a HTTP server, there are an infinite number of ways to configure it, and it is impossible to accommodate all of them. There have been a number of PRs and requests over the year to allow customization of some of its expressjs, and have involved adding an increasing number of environment variables to control the behavior. An experienced expressjs user coming onto hubot would not be able to customize the server in a way they would be used to. The specifics of allowing this are worth having its own evolution proposal, but a programmatic launch of hubot would be a prerequisite of it.
+Hubot includes an instance of [Express](https://expressjs.com/) in it, for convenience in integrating with other services, and also because some adapters need it. Express is itself very configurable, and it's difficult to accommodate that configurability from Hubot. There have been PRs and requests over the year to allow customization of some of its Express, and have involved adding an increasing number of environment variables to control the behavior. An experienced Express user starting with Hubot would not be able to configure the server in all the ways they are familiar with. It's worth a separate evolution proposal for more specifics on that, but a programmatic launch of hubot would be a prerequisite of it.
 
 Lastly, there is a fair amount of scaffolding to get hubot running. Programmatic launching of hubot would allow for a single-file example hubot. This would make for a great getting started example, and also obviate the need for a generator which has been programmatic in the past.
-
 
 ## Proposed solution
 
@@ -46,7 +45,7 @@ robot.logger = new Log('info')
 robot.adapter = new Hubot.BuiltinAdapters.Shell(robot)
 robot.alias = '/'
 
-# wait for adapter to be connected, since it might change things at runtime,
+# wait for adapter to connect, since it might change robot.name at runtime,
 # like robot name
 robot.adapter.on 'connected', ->
 
@@ -84,7 +83,7 @@ TODO
 
 Changing the constructor to use an Object of options would break compatibility. It should be possible to detect if the first argument is an Object to use the new style, or use the old positional arguments.
 
-`Robot`'s constructor might not even be a public API currently, but it's pretty likely something out there (test helpers?) use it in its current form.
+`Robot`'s constructor might not even be a public API, but it's likely there is code out there (test helpers?) using it in its current form.
 
 ## Alternatives considered
 

@@ -65,6 +65,11 @@ robot.adapter.on 'connected', ->
 robot.run()
 ```
 
+Open questions to answer:
+
+- is there any need for the bin/hubot launcher? Perhaps it could be useful for handling some of the logistics of
+- should `loadScriptPackage` take a string to require, or expect a function? if it takes a function, that implies something that is more general
+
 ## Detailed design
 
 > Describe the design of the solution in detail. The detail in this section should be sufficient for someone who is *not* one of the authors to be able to reasonably implement the feature.

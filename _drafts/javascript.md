@@ -101,9 +101,11 @@ Only breaking change is dropping support of Node 0.10 and 0.12.
 
   Node 7.6 introduced native support for async/await. For asynchronous code like much of Hubot is, this is a very nice feature. It makes the code more readable and hence more accessible for contributors which is a main objective of the Hubot community.
 
-  The reason we decided against it is that the complexity of Hubot  core is not too high, the code can be made very readable even when using Promises. Once the one-time conversion from CoffeeScript to JavaScript is done, only smaller parts of the code base will be touched, the effect of async/await vs. promises will be limited.
+  The reason we decided against it is that the complexity of Hubot core is not too high, the code can be made very readable even when using Promises. Once the one-time conversion from CoffeeScript to JavaScript is done, only smaller parts of the code base will be touched, the effect of async/await vs. promises will be limited.
 
   More importantly, we would make it much harder for existing users to upgrade to the new Hubot version. Hubot is a widely used project and having a clear upgrade plan with a reasonable pace is critical. If we only drop support for versions which are no longer maintained we can align with Node’s [LTS schedule](https://github.com/nodejs/LTS#readme) so we can avoid a recurring discussion of when to drop support for what versions once and for all.
+
+  Besides, the current Hubot does not use a single promise in its core implementation at this point.
 
 <a name="examples"></a>
 ## Examples

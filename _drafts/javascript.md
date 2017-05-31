@@ -79,7 +79,7 @@ Only breaking change is dropping support of Node 0.10 and 0.12.
 
 ## Alternatives considered
 
-- **[CoffeeScript 6.0](https://github.com/coffeescript6/discuss)  **
+- **[CoffeeScript 6.0](https://github.com/coffeescript6/discuss)**
 
   As stated in the [Background section](https://github.com/coffeescript6/discuss#background), JavaScript caught up with most of the features that only CoffeeScript offered in the past.
 

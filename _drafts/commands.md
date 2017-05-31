@@ -25,7 +25,7 @@ Here are some issues where similar features have been discussed:
 
 ## Proposed solution
 
-A new API based on [Commander.js](https://github.com/tj/commander.js), a library with nice APIs for defining command-line interfaces, would be added on `robot.command`.
+A new API inspired by [Commander.js](https://github.com/tj/commander.js), a library with nice APIs for defining command-line interfaces, would be added on `robot.command`.
 
 ```js
 robot
@@ -39,6 +39,12 @@ robot
 ## Detailed design
 
 > Describe the design of the solution in detail. The detail in this section should be sufficient for someone who is *not* one of the authors to be able to reasonably implement the feature.
+
+### API
+
+The public API will be inspired by [commander.js](https://github.com/tj/commander.js).
+
+_Note: Originally the goal was to directly use commander.js, but it's implementation makes too many assumptions about a real command line interface, using `process.exit()` for error handling and `console.log()` for output to the user. The initial prototype required too much monkey patching to get around it._
 
 TODO:
 
@@ -59,6 +65,7 @@ robot.respond(/cowsay (.*)/, (res) => {
   res.reply(require('cowsay').say(res.matches[1]));
 });
 ```
+
 
 ## Backward compatibility
 

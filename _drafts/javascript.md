@@ -27,10 +27,6 @@ This evolution proposal is part of point 3 of the Hubot 3.0 milestone:
 
 Converting of all CoffeeScript to JavaScript which can run natively on Node 4 ([current maintenance version until April 2018](https://github.com/nodejs/LTS#lts-schedule1)).
 
-The only tool I would like to introduce is a linting tool which will be run as part of `npm test`.
-
-I suggest [standard](https://standardjs.com/). We’ve been using it in all our projects at [Hoodie](http://hood.ie/) and [Neighbourhoodie](http://neighbourhood.ie) since 2+ years and never looked back. It's a zero-configuration JavaScript linter.
-
 ## Detailed process
 
 **TODO:** make one or two sample CoffeeScript to JavaScript conversions (I’m working on it right now and will make it part of the proposal PR for the evolution repository)

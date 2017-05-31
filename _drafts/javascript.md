@@ -29,8 +29,6 @@ Converting of all CoffeeScript to JavaScript which can run natively on Node 4 ([
 
 ## Detailed process
 
-**TODO:** make one or two sample CoffeeScript to JavaScript conversions (I’m working on it right now and will make it part of the proposal PR for the evolution repository)
-
 The steps of the conversation will be
 
 - [ ] Convert source files from CoffeeScript to JavaScript.
@@ -38,6 +36,8 @@ The steps of the conversation will be
 - [ ] update package.json
 - [ ] add script for JavaScript linting
 - [ ] Update documentation
+
+See also [examples](#examples) below
 
 ### Convert source files from CoffeeScript to JavaScript
 
@@ -104,3 +104,189 @@ Only breaking change is dropping support of Node 0.10 and 0.12.
   The reason we decided against it is that the complexity of Hubot  core is not too high, the code can be made very readable even when using Promises. Once the one-time conversion from CoffeeScript to JavaScript is done, only smaller parts of the code base will be touched, the effect of async/await vs. promises will be limited.
 
   More importantly, we would make it much harder for existing users to upgrade to the new Hubot version. Hubot is a widely used project and having a clear upgrade plan with a reasonable pace is critical. If we only drop support for versions which are no longer maintained we can align with Node’s [LTS schedule](https://github.com/nodejs/LTS#readme) so we can avoid a recurring discussion of when to drop support for what versions once and for all.
+
+<a name="examples"></a>
+## Examples
+
+- [`index.coffee`](#example1)
+- [`src/robot.coffee`](#example2)
+
+<a name="example1"></a>
+### `index.coffee`
+
+Original CoffeeScript
+
+```coffeescript
+User                                                                 = require './src/user'
+Brain                                                                = require './src/brain'
+Robot                                                                = require './src/robot'
+Adapter                                                              = require './src/adapter'
+Response                                                             = require './src/response'
+{Listener,TextListener}                                              = require './src/listener'
+{Message,TextMessage,EnterMessage,LeaveMessage,TopicMessage,CatchAllMessage} = require './src/message'
+
+module.exports = {
+  User
+  Brain
+  Robot
+  Adapter
+  Response
+  Listener
+  TextListener
+  Message
+  TextMessage
+  EnterMessage
+  LeaveMessage
+  TopicMessage
+  CatchAllMessage
+}
+
+module.exports.loadBot = (adapterPath, adapterName, enableHttpd, botName, botAlias) ->
+  new Robot adapterPath, adapterName, enableHttpd, botName, botAlias
+```
+
+JavaScript compatible with Node 4
+
+```javascript
+'use strict'
+
+const User = require('./src/user')
+const Brain = require('./src/brain')
+const Robot = require('./src/robot')
+const Adapter = require('./src/adapter')
+const Response = require('./src/response')
+const Listener = require('./src/listener')
+const Message = require('./src/message')
+
+module.exports = {
+  User,
+  Brain,
+  Robot,
+  Adapter,
+  Response,
+  Listener: Listener.Listener,
+  TextListener: Listener.TextListener,
+  Message: Message.Message,
+  TextMessage: Message.TextMessage,
+  EnterMessage: Message.EnterMessage,
+  LeaveMessage: Message.LeaveMessage,
+  TopicMessage: Message.TopicMessage,
+  CatchAllMessage: Message.CatchAllMessage,
+
+  loadBot (adapterPath, adapterName, enableHttpd, botName, botAlias) {
+    return new Robot(adapterPath, adapterName, enableHttpd, botName, botAlias)
+  }
+}
+
+module.exports.loadBot = function loadBot (adapterPath, adapterName, enableHttpd, botName, botAlias) {
+  return new Robot(adapterPath, adapterName, enableHttpd, botName, botAlias)
+}
+```
+
+JavaScript compatible with Node 7.6+
+
+```js
+const User = require('./src/user')
+const Brain = require('./src/brain')
+const Robot = require('./src/robot')
+const Adapter = require('./src/adapter')
+const Response = require('./src/response')
+const {Listener, TextListener} = require('./src/listener')
+const {Message, TextMessage, EnterMessage, LeaveMessage, TopicMessage, CatchAllMessage} = require('./src/message')
+
+module.exports = {
+  User,
+  Brain,
+  Robot,
+  Adapter,
+  Response,
+  Listener,
+  TextListener,
+  Message,
+  TextMessage,
+  EnterMessage,
+  LeaveMessage,
+  TopicMessage,
+  CatchAllMessage,
+
+  loadBot (adapterPath, adapterName, enableHttpd, botName, botAlias) {
+    return new Robot(adapterPath, adapterName, enableHttpd, botName, botAlias)
+  }
+}
+```
+
+<a name="example2"></a>
+### `src/robot.coffee` (excerpt)
+
+Original
+
+```coffeescript
+class Robot
+
+  constructor: (adapterPath, adapter, httpd, name = 'Hubot', alias = false) ->
+    @adapterPath ?= Path.join __dirname, "adapters"
+
+    @name       = name
+
+    @on 'error', (err, res) =>
+      @invokeErrorHandlers(err, res)
+    @onUncaughtException = (err) =>
+      @emit 'error', err
+    process.on 'uncaughtException', @onUncaughtException
+
+  send: (envelope, strings...) ->
+    @adapter.send envelope, strings...
+```
+
+JavaScript compatible with Node 4
+
+```javascript
+'use strict'
+
+class Robot {
+  constructor (adapterPath, adapter, httpd, name, alias) {
+    if (name == null) { name = 'Hubot' }
+    if (alias == null) { alias = false }
+
+    this.name = name
+
+    this.on('error', (err, res) => {
+      return this.invokeErrorHandlers(err, res)
+    })
+    this.onUncaughtException = err => {
+      return this.emit('error', err)
+    }
+    process.on('uncaughtException', this.onUncaughtException)
+  }
+
+  send (envelope /*, ...strings */) {
+    const strings = [].slice.call(arguments, 1)
+    return this.adapter.send(envelope, strings)
+  }
+}
+```
+
+JavaScript compatible with Node 7.6+
+
+```javascript
+class Robot {
+  constructor (adapterPath, adapter, httpd, name, alias) {
+    if (name == null) { name = 'Hubot' }
+    if (alias == null) { alias = false }
+
+    this.name = name
+
+    this.on('error', (err, res) => {
+      return this.invokeErrorHandlers(err, res)
+    })
+    this.onUncaughtException = err => {
+      return this.emit('error', err)
+    }
+    process.on('uncaughtException', this.onUncaughtException)
+  }
+
+  send (envelope, ...strings) {
+    return this.adapter.send(envelope, ...Array.from(strings))
+  }
+}
+```

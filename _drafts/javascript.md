@@ -41,7 +41,7 @@ The steps of the conversation will be
 
 ### Convert source files from CoffeeScript to JavaScript
 
-Convert all source files from CoffeeScript to JavaScript with a tool like [espresso](https://github.com/HipsterBrown/espresso).
+Convert all source files from CoffeeScript to JavaScript with a tool like [decaffeinate](https://github.com/decaffeinate/decaffeinate), see also [github/hubot#1138](https://github.com/github/hubot/issues/1138).
 
 Make sure the existing tests (still written in CoffeeScript) run against the new JavaScript.
 

@@ -42,15 +42,15 @@ robot
 
 TODO:
 
-- explicit args
+- [ ] explicit args
   - required: `deploy <branch>`
   - optional: `deploy <branch> [environment]`
   - Variadic: `deploy <branch> [hosts...]`
   - coercion & regex for advanced syntax
   - default values
-- subcommands: `deploy list`
-- automated help
-- disable `option`
+- [ ] subcommands: `deploy list`
+- [ ] automated help
+- [ ] listener metadata
 
 Initially, this API will act as a subset of `respond`. The cowsay example above would look like this with existing APIs:
 

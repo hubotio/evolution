@@ -36,6 +36,8 @@ robot
   });
 ```
 
+A prototype is being worked on in https://github.com/bkeepers/hubot-commands.
+
 ## Detailed design
 
 > Describe the design of the solution in detail. The detail in this section should be sufficient for someone who is *not* one of the authors to be able to reasonably implement the feature.
@@ -65,7 +67,6 @@ robot.respond(/cowsay (.*)/, (res) => {
   res.reply(require('cowsay').say(res.matches[1]));
 });
 ```
-
 
 ## Backward compatibility
 

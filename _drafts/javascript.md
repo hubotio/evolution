@@ -179,10 +179,6 @@ module.exports = {
     return new Robot(adapterPath, adapterName, enableHttpd, botName, botAlias)
   }
 }
-
-module.exports.loadBot = function loadBot (adapterPath, adapterName, enableHttpd, botName, botAlias) {
-  return new Robot(adapterPath, adapterName, enableHttpd, botName, botAlias)
-}
 ```
 
 JavaScript compatible with Node 7.6+

@@ -51,7 +51,7 @@ Now go trough each file and improve the code readability by hand as needed. From
 
 Same as the previous steps only for the tests files this time.
 
-When finished, create a separate branch with with the tests written in JavaScript but the source code still in CoffeeScript to assure integrity.
+When finished, create a separate branch with the tests written in JavaScript but the source code still in CoffeeScript to assure integrity.
 
 ### Update package.json
 

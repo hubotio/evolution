@@ -82,6 +82,10 @@ as well as other, officially supported ones
 - [ ] [hubot-scripts/hubot-rules](https://github.com/hubot-scripts/hubot-rules)
 - [ ] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit)
 
+Also
+
+- [ ] Add not for Debian & Ubuntu based Linux users: [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+
 ## Backward compatibility
 
 Only breaking change is dropping support of Node 0.10 and 0.12.

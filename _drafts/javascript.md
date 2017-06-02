@@ -37,6 +37,9 @@ The steps of the conversation will be
 - [ ] add script for JavaScript linting
 - [ ] Update documentation
 
+All steps will be part of the same PR but split into separate commits so people
+can follow more easily.
+
 See also [examples](#examples) below
 
 ### Convert source files from CoffeeScript to JavaScript

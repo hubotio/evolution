@@ -36,6 +36,7 @@ The steps of the conversation will be
 - [ ] update package.json
 - [ ] add script for JavaScript linting
 - [ ] Update documentation
+- [ ] Test with popular projects depending on Hubot
 
 All steps will be part of the same PR but split into separate commits so people
 can follow more easily.
@@ -88,6 +89,12 @@ as well as other, officially supported ones
 Also
 
 - [ ] Add not for Debian & Ubuntu based Linux users: [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+
+### Test with popular projects depending on Hubot
+
+- [ ] [slack](https://github.com/slackapi/hubot-slack)
+- [ ] [hipchat](https://github.com/hipchat/hubot-hipchat)
+- [ ] [irc](https://github.com/nandub/hubot-irc)
 
 ## Backward compatibility
 

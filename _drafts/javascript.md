@@ -67,7 +67,20 @@ I suggest [standard](https://standardjs.com/). We’ve been using it in all our 
 
 ### Update documentation
 
-Remove any reference of CoffeeScript from the documentation.
+Remove any reference of CoffeeScript from the documentation of the main repository
+as well as other, officially supported ones
+
+- [ ] [github/generator-hubot](https://github.com/github/generator-hubot)
+- [ ] [github/hubot.github.com](https://github.com/github/hubot.github.com) (currently private)
+- [ ] [hubot-scripts/hubot-diagnostics](https://github.com/hubot-scripts/hubot-diagnostics)
+- [ ] [hubot-scripts/hubot-help](https://github.com/hubot-scripts/hubot-help)
+- [ ] [hubot-scripts/hubot-heroku-keepalive](https://github.com/hubot-scripts/hubot-heroku-keepalive)
+- [ ] [hubot-scripts/hubot-google-images](https://github.com/hubot-scripts/hubot-google-images)
+- [ ] [hubot-scripts/hubot-google-translate](https://github.com/hubot-scripts/hubot-google-translate)
+- [ ] [hubot-scripts/hubot-pugme](https://github.com/hubot-scripts/hubot-pugme)
+- [ ] [hubot-scripts/hubot-redis-brain](https://github.com/hubot-scripts/hubot-redis-brain)
+- [ ] [hubot-scripts/hubot-rules](https://github.com/hubot-scripts/hubot-rules)
+- [ ] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit)
 
 ## Backward compatibility
 

@@ -48,7 +48,7 @@ Convert all source files from CoffeeScript to JavaScript with a tool like [decaf
 
 Make sure the existing tests (still written in CoffeeScript) run against the new JavaScript.
 
-Now go trough each file and improve the code readability by hand as needed. From my experiences with converting Hoodie from CoffeeScript to JavaScript quite a lot of manual work will be required.
+Now go through each file and improve the code readability by hand as needed. From my experiences with converting Hoodie from CoffeeScript to JavaScript quite a lot of manual work will be required.
 
 ### Convert test files from CoffeeScript to JavaScript
 

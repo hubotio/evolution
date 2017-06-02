@@ -6,7 +6,7 @@ state: In Progress
 
 ## Motivation
 
-This evolution proposal is part of point 3 of the Hubot 3.0 milestone:
+This evolution proposal is part of point 3 of [the Hubot 3.0 milestone](https://github.com/hubotio/evolution/tree/01dd8577c8e616921c3c6fb61b3ccc3801cdaf1f#hubot-30):
 
 > Modernize the project by translating CoffeeScript to JavaScript, improving integration with various developer tools, and adding features that make it easier for developers to automate their workflow.
 

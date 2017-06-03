@@ -88,7 +88,7 @@ as well as other, officially supported ones
 
 Also
 
-- [ ] Add not for Debian & Ubuntu based Linux users: [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+- [ ] Add notE for Debian & Ubuntu based Linux users: [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 
 ### Test with popular projects depending on Hubot
 

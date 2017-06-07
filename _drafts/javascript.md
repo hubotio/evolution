@@ -27,16 +27,29 @@ This evolution proposal is part of point 3 of [the Hubot 3.0 milestone](https://
 
 Converting of all CoffeeScript to JavaScript which can run natively on Node 4 ([current maintenance version until April 2018](https://github.com/nodejs/LTS#lts-schedule1)).
 
+Probably the biggest challenge is that CoffeeScript classes are incompatible
+with es2015 classes: they cannot extend from each other. It is something that
+[CoffeeScript v2 is addressing](http://coffeescript.org/v2/#coffeescript-2).
+
+The hubot eco system expects CoffeeScript-compatible "classes" being return in
+`require('hubot')`, even when 3rd party adapters have been implemented in
+JavaScript themselves. To address that problem, I suggest we use es2015 `class`
+declarations internally but wrap them in CoffeeScript compatible classes in
+`/index.js`. Additionally, we can introduce a new officially support export at
+`require('hubot/es2015')` which returns our es2015 class declarations, so that
+3rd party developers can use es2015 class declarations themselves and inhert
+from ours.
+
 ## Detailed process
 
 The steps of the conversation will be
 
 - [ ] Convert source files from CoffeeScript to JavaScript.
+- [ ] Test with popular projects depending on Hubot
 - [ ] Convert test files from CoffeeScript to JavaScript.
 - [ ] update package.json
 - [ ] add script for JavaScript linting
 - [ ] Update documentation
-- [ ] Test with popular projects depending on Hubot
 
 All steps will be part of the same PR but split into separate commits so people
 can follow more easily.
@@ -50,6 +63,12 @@ Convert all source files from CoffeeScript to JavaScript with a tool like [decaf
 Make sure the existing tests (still written in CoffeeScript) run against the new JavaScript.
 
 Now go through each file and improve the code readability by hand as needed. From my experiences with converting Hoodie from CoffeeScript to JavaScript quite a lot of manual work will be required.
+
+### Test with popular projects depending on Hubot
+
+- [ ] [slack](https://github.com/slackapi/hubot-slack)
+- [ ] [hipchat](https://github.com/hipchat/hubot-hipchat)
+- [ ] [irc](https://github.com/nandub/hubot-irc)
 
 ### Convert test files from CoffeeScript to JavaScript
 
@@ -89,12 +108,6 @@ as well as other, officially supported ones
 Also
 
 - [ ] Add notE for Debian & Ubuntu based Linux users: [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
-
-### Test with popular projects depending on Hubot
-
-- [ ] [slack](https://github.com/slackapi/hubot-slack)
-- [ ] [hipchat](https://github.com/hipchat/hubot-hipchat)
-- [ ] [irc](https://github.com/nandub/hubot-irc)
 
 ## Backward compatibility
 

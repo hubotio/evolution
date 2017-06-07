@@ -70,6 +70,36 @@ Now go through each file and improve the code readability by hand as needed. Fro
 - [ ] [hipchat](https://github.com/hipchat/hubot-hipchat)
 - [ ] [irc](https://github.com/nandub/hubot-irc)
 
+Instructions to test an existing adapter with the [pull request](https://github.com/github/hubot/pull/1347):
+
+1. Check out the pull request
+
+   ```
+   git clone git@github.com:github/hubot.git
+   cd hubot
+   npm install
+   npm link
+   ```
+
+2. Now link it into your test app using an example adapter
+
+   Using the example of slack here:
+
+   ```
+   npm install -g yo generator-hubot
+   mkdir my-awesome-hubot && cd my-awesome-hubot
+   yo hubot --adapter=slack
+   npm link hubot
+   ```
+
+3. Now start hubot
+
+   ```
+   NODE_PATH=`pwd`/node_modules HUBOT_SLACK_TOKEN=<your token here> ./bin/hubot --adapter slack
+   ```
+
+   replace `<your token here>` with your own bots token from slack
+
 ### Convert test files from CoffeeScript to JavaScript
 
 Same as the previous steps only for the tests files this time.

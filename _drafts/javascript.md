@@ -137,7 +137,7 @@ as well as other, officially supported ones
 
 Also
 
-- [ ] Add notE for Debian & Ubuntu based Linux users: [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+- [ ] Add note for Debian & Ubuntu based Linux users: [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 
 ## Backward compatibility
 
@@ -161,9 +161,10 @@ Only breaking change is dropping support of Node 0.10 and 0.12.
 
   > The "official" repositories are outdated and even insecure. We need to treat them as legacy and move on.
 
-  The Node Foundation has tried to get Debian to adapt modern Node versions like "[pretty much every other repository for packages takes modern versions.](https://twitter.com/mikeal/status/869646796888330240)" but could not succeed.
+  The Node Foundation has tried to get Debian to adapt modern Node versions like "[pretty much every other repository for packages takes modern versions.](https://twitter.com/mikeal/status/869646796888330240)" but could not succeed. There will also be [a new release coming on June 17th which will have node@4.8.2 pre-installed](https://twitter.com/olov/status/872783380445843456).
 
-  See more responses to my question regarding old Node versions at https://twitter.com/gr2m/status/869305267464306689
+  See more responses to my question regarding old Node versions at https://twitter.com/gr2m/status/869305267464306689.
+  Probably the most relevant responses is "[](https://twitter.com/olov/status/872783380445843456)"
 
 - **Dropping support for Node <v7.6**
 

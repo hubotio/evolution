@@ -44,11 +44,18 @@ from ours.
 
 The steps of the conversation will be
 
-- [ ] Convert source files from CoffeeScript to JavaScript.
-- [ ] Test with popular projects depending on Hubot
-- [ ] Convert test files from CoffeeScript to JavaScript.
-- [ ] update package.json
-- [ ] add script for JavaScript linting
+- [x] Convert source files from CoffeeScript to JavaScript.
+- [x] Test with popular projects depending on Hubot
+- [x] Convert test files from CoffeeScript to JavaScript.
+- [x] update package.json
+- [x] add script for JavaScript linting
+- [ ] Release `hubot@3.0.0`
+  - [ ] Update hubot’s version range `peerDependencies` of default scripts
+  - [ ] Publish `hubot@3.0.0` with `--tag=next`
+  - [ ] Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
+  - [ ] Convert generator to JavaScript, release new breaking version with `@next` tag
+  - [ ] Test all `@next` releases
+  - [ ] Set `@latest` tag on all modules
 - [ ] Update documentation
 
 All steps will be part of the same PR but split into separate commits so people
@@ -66,9 +73,9 @@ Now go through each file and improve the code readability by hand as needed. Fro
 
 ### Test with popular projects depending on Hubot
 
-- [ ] [slack](https://github.com/slackapi/hubot-slack)
-- [ ] [hipchat](https://github.com/hipchat/hubot-hipchat)
-- [ ] [irc](https://github.com/nandub/hubot-irc)
+- [x] [slack](https://github.com/slackapi/hubot-slack)
+- [x] [hipchat](https://github.com/hipchat/hubot-hipchat)
+- [x] [irc](https://github.com/nandub/hubot-irc)
 
 Instructions to test an existing adapter with the [pull request](https://github.com/github/hubot/pull/1347):
 
@@ -118,13 +125,10 @@ The only tool I would like to introduce as part of this proposal is a linting to
 
 I suggest [standard](https://standardjs.com/). We’ve been using it in all our projects at Hoodie and Neighbourhoodie since 2+ years and never looked back. It's a zero-configuration JavaScript linter.
 
-### Update documentation
+### Release `hubot@3.0.0`
 
-Remove any reference of CoffeeScript from the documentation of the main repository
-as well as other, officially supported ones
+#### Update hubot’s version range `peerDependencies` of default scripts
 
-- [ ] [github/generator-hubot](https://github.com/github/generator-hubot)
-- [ ] [github/hubot.github.com](https://github.com/github/hubot.github.com) (currently private)
 - [ ] [hubot-scripts/hubot-diagnostics](https://github.com/hubot-scripts/hubot-diagnostics)
 - [ ] [hubot-scripts/hubot-help](https://github.com/hubot-scripts/hubot-help)
 - [ ] [hubot-scripts/hubot-heroku-keepalive](https://github.com/hubot-scripts/hubot-heroku-keepalive)
@@ -135,9 +139,107 @@ as well as other, officially supported ones
 - [ ] [hubot-scripts/hubot-rules](https://github.com/hubot-scripts/hubot-rules)
 - [ ] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit)
 
-Also
+replace
 
-- [ ] Add note for Debian & Ubuntu based Linux users: [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+    "peerDependencies": {
+      "hubot": "2.x"
+    },
+
+with
+
+    "peerDependencies": {
+      "hubot": ">=2 <10"
+    },
+
+That will give us enough space to follow semantic-versioning with `hubot` while not breaking the eco system each time.
+
+Once we decide that it’s time to make a breaking change which breaks existing adapters, we jump version numbers and go directly to `hubot@10`. Semantic versioning does not forbid that.
+
+#### Publish `hubot@3.0.0` with `--tag=next`
+
+- Setup semantic-versioning for `hubot` as described in [`semantic-release` proposal](https://github.com/hubotio/evolution/pull/6).
+- Set the publish tag to `next` in `package.json` (see [publishConfig docs](https://docs.npmjs.com/files/package.json#publishconfig)).
+- Add an empty commit which will trigger the `3.0.0` release, meaning it needs
+  a `BREAKING CHANGE:` with a description in the body (see [changes](https://github.com/hubotio/hubot/commit/9987f073a467a07bbf53f1180bf945c18e58dee7#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR4)).
+
+Once `hubot@3.0.0` got successfully released with, test upgrading an existing app:
+Setup Hubot app with the existing generator. Then update to the latest `hubot`
+with `npm install --save hubot@next`. Make sure it all works. Test in
+
+- node v4.8.3 (npm v2.15.11)
+- node v6.9.5 (npm v3.10.10)
+- node v8.0.0 (npm v5.0.3)
+
+#### Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
+
+- [ ] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics)
+- [ ] [hubotio/hubot-help](https://github.com/hubotio/hubot-help)
+- [ ] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain)
+- [ ] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules)
+
+Note that the others will no longer be installed by default, they can be
+upgraded later. (see https://github.com/hubotio/hubot/issues/1327#issuecomment-307895635)
+
+Process for each script:
+
+1. Convert from CoffeeScript to JavaScript. There should be no breaking changes,
+   but we should release a new breaking version just in case. Only `hubot-help`
+   requires `hubot` in its test. We should update the test to use `hubot@3` in
+   `devDependencies`. Here is [a tutorial that might be helpful](https://youtu.be/4VEfjHznReo).
+   Make sure to also remove all references to CoffeeScript from all documentation
+   files (README, CONTRIBUTING ...) and code comments
+2. Add coverage (compare to https://github.com/hubotio/hubot/pull/1350)
+3. remove Gruntfile if present
+4. remove `script/*` files – we no longer need them. Running tests only requires `npm test`
+5. set "engines" in package.json to require node > 4
+6. setup semantic-release using `@next` tag, see above
+
+#### Convert generator to JavaScript, release new breaking version with `@next` tag
+
+1. Convert all CoffeeScript to JavaScript. Make sure to update hubot
+   peerDependencies & devDependencies in the script template. Check how to
+   install `@next` versions of the standard scripts with [`this.npmInstall`](https://git.io/vHdYf).
+2. remove Gruntfile
+3. set "engines" in package.json to require node > 4
+4. setup semantic-release using `@next` tag, see above
+
+#### Test all `@next` releases
+
+Install the new generator with `npm install -g generator-hubot@next`.
+Generate a new app and a new script. Make sure everything works. Test in
+
+- node v4.8.3 (npm v2.15.11)
+- node v6.9.5 (npm v3.10.10)
+- node v8.0.0 (npm v5.0.3)
+
+In case of bugs release patch versions as needed. If `semantic-release` is setup
+in all repositories correctly, this should be a quick and safe process, as all
+patch versions will continue to be released with the `@next` tag
+
+#### Set `@latest` tag on all modules
+
+- Release another patch versions for [hubotio/generator-hubot](https://github.com/hubotio/hubot)
+which no longer installs with `@next`.
+
+Then set the `@latest` tag to the same version as `@next` tag on all of these
+packages with `npm dist-tag add <package>@next latest`
+
+- [ ] [hubot-diagnostics](https://npmjs.com/package/hubot-diagnostics)
+- [ ] [hubot-help](https://npmjs.com/package/hubot-help)
+- [ ] [hubot-redis-brain](https://npmjs.com/package/hubot-redis-brain)
+- [ ] [hubot-rules](https://npmjs.com/package/hubot-rules)
+- [ ] [generator-hubot](https://npmjs.com/package/hubot)
+- [ ] [hubot](https://npmjs.com/package/hubot)
+
+- update all package.json files which have configured `semantic-release` to
+  release with `@next` version to release with `@latest` instead (remove the `publishConfig` from package.json).
+  Commit with `chore: ...` commits, no new releases are necessary.
+
+### Update documentation
+
+- [ ] Remove mention of CoffeeScript in [github/hubot.github.com](https://github.com/github/hubot.github.com) (currently private)
+- [ ] Add note for Debian & Ubuntu based Linux users to docs:
+      [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 
 ## Backward compatibility
 

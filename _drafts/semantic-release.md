@@ -1,5 +1,5 @@
 ---
-state: In Progress
+state: In Review
 ---
 
 # Set up release workflow with `semantic-release`

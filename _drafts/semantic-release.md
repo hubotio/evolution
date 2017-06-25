@@ -4,7 +4,7 @@ state: In Review
 
 # Set up release workflow with `semantic-release`
 
-`semantic-release` makes releasing faster, simpler and safer. All of these are valuable if we want to increase public participation in the project and increase momentum and motivation.
+[semantic-release](https://github.com/semantic-release/semantic-release) makes releasing faster, simpler and safer. All of these are valuable if we want to increase public participation in the project and increase momentum and motivation.
 
 ## Motivation
 
@@ -16,7 +16,7 @@ Set up `semantic-release` on `hubotio/hubot` and let it release the npm module f
 
 ## Detailed design
 
-An admin/owner [sets up](https://github.com/semantic-release/semantic-release#setup) [semantic-release](https://github.com/semantic-release/semantic-release) on `hubotio/hubot` using `semantic-release-cli setup`. Since we’ve already got tests and Travis set up, this shouldn’t require any additional steps.
+An admin/owner [sets up](https://github.com/semantic-release/semantic-release#setup) `semantic-release` on `hubotio/hubot` using [`semantic-release-cli setup`](https://github.com/semantic-release/cli#semantic-release-cli). Since we’ve already got tests and Travis set up, this shouldn’t require any additional steps.
 
 We should update `CONTRIBUTING.md`:
 - include more details about our [expected commit message format](https://github.com/semantic-release/semantic-release#default-commit-message-format), and why this is important

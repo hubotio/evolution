@@ -184,8 +184,8 @@ with `npm install --save hubot@next`. Make sure it all works. Test in
 
 #### Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
 
-- [ ] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics)
-- [ ] [hubotio/hubot-help](https://github.com/hubotio/hubot-help)
+- [ ] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics) ([PR](https://github.com/hubotio/hubot-diagnostics/pull/5))
+- [ ] [hubotio/hubot-help](https://github.com/hubotio/hubot-help) ([PR](https://github.com/hubotio/hubot-help/pull/33))
 - [ ] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain)
 - [ ] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules)
 
@@ -212,6 +212,11 @@ Process for each script:
    peerDependencies & devDependencies in the script template. Check how to
    install `@next` versions of the standard scripts with [`this.npmInstall`](https://git.io/vHdYf).
 2. remove Gruntfile
+3. remove deprecated scripts from the default install
+   - hubot-heroku-keepalive
+   - hubot-google-images
+   - hubot-google-translate
+   - hubot-shipit
 3. set "engines" in package.json to require node > 4
 4. setup semantic-release using `@next` tag, see above
 

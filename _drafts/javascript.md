@@ -129,15 +129,15 @@ I suggest [standard](https://standardjs.com/). We’ve been using it in all our 
 
 #### Update hubot’s version range `peerDependencies` of default scripts
 
-- [ ] [hubot-scripts/hubot-diagnostics](https://github.com/hubot-scripts/hubot-diagnostics)
-- [ ] [hubot-scripts/hubot-help](https://github.com/hubot-scripts/hubot-help)
-- [ ] [hubot-scripts/hubot-heroku-keepalive](https://github.com/hubot-scripts/hubot-heroku-keepalive)
-- [ ] [hubot-scripts/hubot-google-images](https://github.com/hubot-scripts/hubot-google-images)
-- [ ] [hubot-scripts/hubot-google-translate](https://github.com/hubot-scripts/hubot-google-translate)
-- [ ] [hubot-scripts/hubot-pugme](https://github.com/hubot-scripts/hubot-pugme)
-- [ ] [hubot-scripts/hubot-redis-brain](https://github.com/hubot-scripts/hubot-redis-brain)
-- [ ] [hubot-scripts/hubot-rules](https://github.com/hubot-scripts/hubot-rules)
-- [ ] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit)
+- [ ] [hubot-scripts/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics/pull/6)
+- [ ] [hubot-scripts/hubot-help](https://github.com/hubotio/hubot-help/pull/35)
+- [ ] [hubot-scripts/hubot-heroku-keepalive](https://github.com/hubot-scripts/hubot-heroku-keepalive/pull/34)
+- [ ] [hubot-scripts/hubot-google-images](https://github.com/hubot-scripts/hubot-google-images/pull/44)
+- [ ] [hubot-scripts/hubot-google-translate](https://github.com/hubot-scripts/hubot-google-translate/pull/13)
+- [ ] [hubot-scripts/hubot-pugme](https://github.com/hubot-scripts/hubot-pugme/pull/11)
+- [ ] [hubot-scripts/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain/pull/29/files)
+- [ ] [hubot-scripts/hubot-rules](https://github.com/hubotio/hubot-rules/pull/5)
+- [ ] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit/pull/23)
 
 replace
 

@@ -129,14 +129,14 @@ I suggest [standard](https://standardjs.com/). We’ve been using it in all our 
 
 #### Update hubot’s version range `peerDependencies` of default scripts
 
-- [ ] [hubot-scripts/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics/pull/6)
-- [ ] [hubot-scripts/hubot-help](https://github.com/hubotio/hubot-help/pull/35)
+- [x] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics/pull/6)
+- [x] [hubotio/hubot-help](https://github.com/hubotio/hubot-help/pull/35)
 - [ ] [hubot-scripts/hubot-heroku-keepalive](https://github.com/hubot-scripts/hubot-heroku-keepalive/pull/34)
 - [ ] [hubot-scripts/hubot-google-images](https://github.com/hubot-scripts/hubot-google-images/pull/44)
 - [ ] [hubot-scripts/hubot-google-translate](https://github.com/hubot-scripts/hubot-google-translate/pull/13)
 - [ ] [hubot-scripts/hubot-pugme](https://github.com/hubot-scripts/hubot-pugme/pull/11)
 - [ ] [hubot-scripts/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain/pull/29/files)
-- [ ] [hubot-scripts/hubot-rules](https://github.com/hubotio/hubot-rules/pull/5)
+- [x] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules/pull/5)
 - [ ] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit/pull/23)
 
 replace
@@ -152,6 +152,18 @@ with
     },
 
 That will give us enough space to follow semantic-versioning with `hubot` while not breaking the eco system each time.
+
+Now manually release patch releases for all packages
+
+- [ ] [hubot-diagnostics](https://npmjs.com/package/hubot-diagnostics)
+- [ ] [hubot-help](https://npmjs.com/package/hubot-help)
+- [ ] [hubot-heroku-keepalive](https://npmjs.com/package/hubot-heroku-keepalive)
+- [ ] [hubot-google-images](https://npmjs.com/package/hubot-google-images)
+- [ ] [hubot-google-translate](https://npmjs.com/package/hubot-google-translate)
+- [ ] [hubot-pugme](https://npmjs.com/package/hubot-pugme)
+- [ ] [hubot-redis-brain](https://npmjs.com/package/hubot-redis-brain)
+- [ ] [hubot-rules](https://npmjs.com/package/hubot-rules)
+- [ ] [hubot-shipit](https://npmjs.com/package/hubot-shipit)
 
 Once we decide that it’s time to make a breaking change which breaks existing adapters, we jump version numbers and go directly to `hubot@10`. Semantic versioning does not forbid that.
 

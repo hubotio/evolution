@@ -135,7 +135,7 @@ I suggest [standard](https://standardjs.com/). We’ve been using it in all our 
 - [ ] [hubot-scripts/hubot-google-images](https://github.com/hubot-scripts/hubot-google-images/pull/44)
 - [ ] [hubot-scripts/hubot-google-translate](https://github.com/hubot-scripts/hubot-google-translate/pull/13)
 - [ ] [hubot-scripts/hubot-pugme](https://github.com/hubot-scripts/hubot-pugme/pull/11)
-- [ ] [hubot-scripts/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain/pull/29/files)
+- [x] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain/pull/29/files)
 - [x] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules/pull/5)
 - [ ] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit/pull/23)
 

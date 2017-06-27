@@ -155,15 +155,15 @@ That will give us enough space to follow semantic-versioning with `hubot` withou
 
 Now manually release patch releases for all packages
 
-- [ ] [hubot-diagnostics](https://npmjs.com/package/hubot-diagnostics)
-- [ ] [hubot-help](https://npmjs.com/package/hubot-help)
-- [ ] [hubot-heroku-keepalive](https://npmjs.com/package/hubot-heroku-keepalive)
-- [ ] [hubot-google-images](https://npmjs.com/package/hubot-google-images)
-- [ ] [hubot-google-translate](https://npmjs.com/package/hubot-google-translate)
-- [ ] [hubot-pugme](https://npmjs.com/package/hubot-pugme)
-- [ ] [hubot-redis-brain](https://npmjs.com/package/hubot-redis-brain)
-- [ ] [hubot-rules](https://npmjs.com/package/hubot-rules)
-- [ ] [hubot-shipit](https://npmjs.com/package/hubot-shipit)
+- [x] [hubot-diagnostics](https://npmjs.com/package/hubot-diagnostics)
+- [x] [hubot-help](https://npmjs.com/package/hubot-help)
+- [x] [hubot-heroku-keepalive](https://npmjs.com/package/hubot-heroku-keepalive)
+- [x] [hubot-google-images](https://npmjs.com/package/hubot-google-images)
+- [x] [hubot-google-translate](https://npmjs.com/package/hubot-google-translate)
+- [x] [hubot-pugme](https://npmjs.com/package/hubot-pugme)
+- [x] [hubot-redis-brain](https://npmjs.com/package/hubot-redis-brain)
+- [x] [hubot-rules](https://npmjs.com/package/hubot-rules)
+- [x] [hubot-shipit](https://npmjs.com/package/hubot-shipit)
 
 Once we decide that it’s time to make a breaking change which breaks existing adapters, we jump version numbers and go directly to `hubot@10`. Semantic versioning does not forbid that.
 

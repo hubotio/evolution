@@ -184,6 +184,8 @@ with `npm install --save hubot@next`. Make sure it all works. Test in
 
 #### Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
 
+Here is a [video tutorial for reference](https://youtu.be/4VEfjHznReo)
+
 - [ ] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics) ([PR](https://github.com/hubotio/hubot-diagnostics/pull/5))
 - [ ] [hubotio/hubot-help](https://github.com/hubotio/hubot-help) ([PR](https://github.com/hubotio/hubot-help/pull/33))
 - [ ] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain)

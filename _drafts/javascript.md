@@ -50,7 +50,7 @@ The steps of the conversation will be
 - [x] update package.json
 - [x] add script for JavaScript linting
 - [ ] Release `hubot@3.0.0`
-  - [ ] Update hubot’s version range `peerDependencies` of default scripts
+  - [x] Update hubot’s version range `peerDependencies` of default scripts
   - [ ] Publish `hubot@3.0.0` with `--tag=next`
   - [ ] Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
   - [ ] Convert generator to JavaScript, release new breaking version with `@next` tag
@@ -131,13 +131,13 @@ I suggest [standard](https://standardjs.com/). We’ve been using it in all our 
 
 - [x] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics/pull/6)
 - [x] [hubotio/hubot-help](https://github.com/hubotio/hubot-help/pull/35)
-- [ ] [hubot-scripts/hubot-heroku-keepalive](https://github.com/hubot-scripts/hubot-heroku-keepalive/pull/34)
-- [ ] [hubot-scripts/hubot-google-images](https://github.com/hubot-scripts/hubot-google-images/pull/44)
-- [ ] [hubot-scripts/hubot-google-translate](https://github.com/hubot-scripts/hubot-google-translate/pull/13)
-- [ ] [hubot-scripts/hubot-pugme](https://github.com/hubot-scripts/hubot-pugme/pull/11)
+- [x] [hubot-scripts/hubot-heroku-keepalive](https://github.com/hubot-scripts/hubot-heroku-keepalive/pull/34)
+- [x] [hubot-scripts/hubot-google-images](https://github.com/hubot-scripts/hubot-google-images/pull/44)
+- [x] [hubot-scripts/hubot-google-translate](https://github.com/hubot-scripts/hubot-google-translate/pull/13)
+- [x] [hubot-scripts/hubot-pugme](https://github.com/hubot-scripts/hubot-pugme/pull/11)
 - [x] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain/pull/29/files)
 - [x] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules/pull/5)
-- [ ] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit/pull/23)
+- [x] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit/pull/23)
 
 replace
 

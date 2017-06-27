@@ -148,10 +148,10 @@ replace
 with
 
     "peerDependencies": {
-      "hubot": ">=2 <10"
+      "hubot": ">=2 <10 || 0.0.0-development"
     },
 
-That will give us enough space to follow semantic-versioning with `hubot` while not breaking the eco system each time.
+That will give us enough space to follow semantic-versioning with `hubot` without breaking the eco system with each breaking version number. The `0.0.0-development` allows linking a local `hubot` repository for testing, the `0.0.0-development` is the default placeholder value for `"version"` set by [`semantic-release-cli setup`](https://github.com/semantic-release/cli#readme).
 
 Now manually release patch releases for all packages
 

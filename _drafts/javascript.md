@@ -138,6 +138,7 @@ I suggest [standard](https://standardjs.com/). We’ve been using it in all our 
 - [x] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain/pull/29/files)
 - [x] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules/pull/5)
 - [x] [hubot-scripts/hubot-shipit](https://github.com/hubot-scripts/hubot-shipit/pull/23)
+- [ ] [gkoo/hubot-maps](https://github.com/gkoo/hubot-maps/pull/10)
 
 replace
 
@@ -164,6 +165,7 @@ Now manually release patch releases for all packages
 - [x] [hubot-redis-brain](https://npmjs.com/package/hubot-redis-brain)
 - [x] [hubot-rules](https://npmjs.com/package/hubot-rules)
 - [x] [hubot-shipit](https://npmjs.com/package/hubot-shipit)
+- [ ] [hubot-maps](https://npmjs.com/package/hubot-maps)
 
 Once we decide that it’s time to make a breaking change which breaks existing adapters, we jump version numbers and go directly to `hubot@10`. Semantic versioning does not forbid that.
 

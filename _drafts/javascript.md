@@ -190,7 +190,7 @@ Here is a [video tutorial for reference](https://youtu.be/4VEfjHznReo)
 - [ ] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics) ([PR](https://github.com/hubotio/hubot-diagnostics/pull/5))
 - [ ] [hubotio/hubot-help](https://github.com/hubotio/hubot-help) ([PR](https://github.com/hubotio/hubot-help/pull/33))
 - [ ] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain) ([PR](https://github.com/hubotio/hubot-redis-brain/pull/31))
-- [ ] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules)
+- [ ] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules) ([PR](https://github.com/hubotio/hubot-rules/pull/7))
 
 Note that the others will no longer be installed by default, they can be
 upgraded later. (see https://github.com/hubotio/hubot/issues/1327#issuecomment-307895635)

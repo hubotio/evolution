@@ -51,7 +51,7 @@ The steps of the conversation will be
 - [x] add script for JavaScript linting
 - [ ] Release `hubot@3.0.0`
   - [x] Update hubot’s version range `peerDependencies` of default scripts
-  - [ ] Publish `hubot@3.0.0` with `--tag=next`
+  - [x] Publish `hubot@3.0.0` with `--tag=next`
   - [ ] Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
   - [ ] Convert generator to JavaScript, release new breaking version with `@next` tag
   - [ ] Test all `@next` releases
@@ -171,18 +171,17 @@ Once we decide that it’s time to make a breaking change which breaks existing 
 
 #### Publish `hubot@3.0.0` with `--tag=next`
 
-- Setup semantic-versioning for `hubot` as described in [`semantic-release` proposal](https://github.com/hubotio/evolution/pull/6).
-- Set the publish tag to `next` in `package.json` (see [publishConfig docs](https://docs.npmjs.com/files/package.json#publishconfig)).
-- Add an empty commit which will trigger the `3.0.0` release, meaning it needs
-  a `BREAKING CHANGE:` with a description in the body (see [changes](https://github.com/hubotio/hubot/commit/9987f073a467a07bbf53f1180bf945c18e58dee7#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR4)).
+- [x] Setup semantic-versioning for `hubot` as described in [`semantic-release` proposal](https://github.com/hubotio/evolution/pull/6).
+- [x] Set the publish tag to `next` in `package.json` (see [publishConfig docs](https://docs.npmjs.com/files/package.json#publishconfig)).
+- [x] Add an empty commit which will trigger the `3.0.0` release, meaning it needs a `BREAKING CHANGE:` with a description in the body (see [changes](https://github.com/hubotio/hubot/commit/9987f073a467a07bbf53f1180bf945c18e58dee7#diff-4ac32a78649ca5bdd8e0ba38b7006a1eR4)).
 
 Once `hubot@3.0.0` got successfully released with, test upgrading an existing app:
 Setup Hubot app with the existing generator. Then update to the latest `hubot`
 with `npm install --save hubot@next`. Make sure it all works. Test in
 
-- node v4.8.3 (npm v2.15.11)
-- node v6.9.5 (npm v3.10.10)
-- node v8.0.0 (npm v5.0.3)
+- [x] node v4.8.3 (npm v2.15.11)
+- [x] node v6.9.5 (npm v3.10.10)
+- [x] node v8.0.0 (npm v5.0.3)
 
 #### Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
 
@@ -190,7 +189,7 @@ Here is a [video tutorial for reference](https://youtu.be/4VEfjHznReo)
 
 - [ ] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics) ([PR](https://github.com/hubotio/hubot-diagnostics/pull/5))
 - [ ] [hubotio/hubot-help](https://github.com/hubotio/hubot-help) ([PR](https://github.com/hubotio/hubot-help/pull/33))
-- [ ] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain)
+- [ ] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain) ([PR](https://github.com/hubotio/hubot-redis-brain/pull/31))
 - [ ] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules)
 
 Note that the others will no longer be installed by default, they can be

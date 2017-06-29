@@ -99,3 +99,5 @@ Changing the constructor to use an Object of options would break compatibility. 
 > Describe alternative approaches to addressing the same problem, and why you chose this approach instead.
 
 Considered having the `bin/hubot` launcher interact with a `index.coffee` or `index.js`. It wasn't clear how that would work, and just running `index.coffee` or `index.js` makes more sense if you are familiar with running javascript projects.
+
+Considered adding properties to `Robot` for configuring script packages and script directories handled by `Robot#run`. This would take away much of the flexibility of being able to control load order.

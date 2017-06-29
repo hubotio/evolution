@@ -219,7 +219,9 @@ Process for each script:
   - hubot-heroku-keepalive
   - hubot-google-images
   - hubot-google-translate
+  - hubot-pugme
   - hubot-shipit
+  - hubot-maps
 - [x] set "engines" in package.json to require node > 4
 - [ ] setup semantic-release using `@next` tag, see above
 

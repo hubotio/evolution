@@ -211,17 +211,17 @@ Process for each script:
 
 #### Convert generator to JavaScript, release new breaking version with `@next` tag
 
-1. Convert all CoffeeScript to JavaScript. Make sure to update hubot
-   peerDependencies & devDependencies in the script template. Check how to
-   install `@next` versions of the standard scripts with [`this.npmInstall`](https://git.io/vHdYf).
-2. remove Gruntfile
-3. remove deprecated scripts from the default install
-   - hubot-heroku-keepalive
-   - hubot-google-images
-   - hubot-google-translate
-   - hubot-shipit
-3. set "engines" in package.json to require node > 4
-4. setup semantic-release using `@next` tag, see above
+- [x] Convert all CoffeeScript to JavaScript. Make sure to update hubot
+      peerDependencies & devDependencies in the script template. Check how to
+      install `@next` versions of the standard scripts with [`this.npmInstall`](https://git.io/vHdYf).
+- [x] remove Gruntfile
+- [x] remove deprecated scripts from the default install
+  - hubot-heroku-keepalive
+  - hubot-google-images
+  - hubot-google-translate
+  - hubot-shipit
+- [x] set "engines" in package.json to require node > 4
+- [ ] setup semantic-release using `@next` tag, see above
 
 #### Test all `@next` releases
 

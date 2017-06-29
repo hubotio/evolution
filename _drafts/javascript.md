@@ -181,7 +181,7 @@ with `npm install --save hubot@next`. Make sure it all works. Test in
 
 - [x] node v4.8.3 (npm v2.15.11)
 - [x] node v6.9.5 (npm v3.10.10)
-- [x] node v8.0.0 (npm v5.0.3)
+- [x] node v8.1.2 (npm v5.0.3)
 
 #### Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
 
@@ -230,7 +230,7 @@ Generate a new app and a new script. Make sure everything works. Test in
 
 - node v4.8.3 (npm v2.15.11)
 - node v6.9.5 (npm v3.10.10)
-- node v8.0.0 (npm v5.0.3)
+- node v8.1.2 (npm v5.0.3)
 
 In case of bugs release patch versions as needed. If `semantic-release` is setup
 in all repositories correctly, this should be a quick and safe process, as all

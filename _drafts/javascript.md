@@ -52,8 +52,8 @@ The steps of the conversation will be
 - [ ] Release `hubot@3.0.0`
   - [x] Update hubot’s version range `peerDependencies` of default scripts
   - [x] Publish `hubot@3.0.0` with `--tag=next`
-  - [ ] Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
-  - [ ] Convert generator to JavaScript, release new breaking version with `@next` tag
+  - [x] Convert default scripts to JavaScrip, release as new breaking versions with `@next` tag
+  - [x] Convert generator to JavaScript, release new breaking version with `@next` tag
   - [ ] Test all `@next` releases
   - [ ] Set `@latest` tag on all modules
 - [ ] Update documentation
@@ -187,10 +187,10 @@ with `npm install --save hubot@next`. Make sure it all works. Test in
 
 Here is a [video tutorial for reference](https://youtu.be/4VEfjHznReo)
 
-- [ ] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics) ([PR](https://github.com/hubotio/hubot-diagnostics/pull/5))
-- [ ] [hubotio/hubot-help](https://github.com/hubotio/hubot-help) ([PR](https://github.com/hubotio/hubot-help/pull/33))
-- [ ] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain) ([PR](https://github.com/hubotio/hubot-redis-brain/pull/31))
-- [ ] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules) ([PR](https://github.com/hubotio/hubot-rules/pull/7))
+- [X] [hubotio/hubot-diagnostics](https://github.com/hubotio/hubot-diagnostics) ([PR](https://github.com/hubotio/hubot-diagnostics/pull/5))
+- [X] [hubotio/hubot-help](https://github.com/hubotio/hubot-help) ([PR](https://github.com/hubotio/hubot-help/pull/33))
+- [X] [hubotio/hubot-redis-brain](https://github.com/hubotio/hubot-redis-brain) ([PR](https://github.com/hubotio/hubot-redis-brain/pull/31))
+- [X] [hubotio/hubot-rules](https://github.com/hubotio/hubot-rules) ([PR](https://github.com/hubotio/hubot-rules/pull/7))
 
 Note that the others will no longer be installed by default, they can be
 upgraded later. (see https://github.com/hubotio/hubot/issues/1327#issuecomment-307895635)
@@ -223,7 +223,7 @@ Process for each script:
   - hubot-shipit
   - hubot-maps
 - [x] set "engines" in package.json to require node > 4
-- [ ] setup semantic-release using `@next` tag, see above
+- [x] setup semantic-release using `@next` tag, see above
 
 #### Test all `@next` releases
 

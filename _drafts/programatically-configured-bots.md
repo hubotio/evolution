@@ -52,9 +52,9 @@ robot.alias = '/'
 # like robot name
 robot.adapter.once 'connected', ->
 
-  # require external hubot scripts
-  robot.loadScriptPackage require('hubot-help')
-  robot.loadScriptPackage require('hubot-shipit')
+  # require external hubot script packages
+  robot.loadPackage 'hubot-help'
+  robot.loadPackage 'hubot-shipit'
 
   # load scripts from a local scripts directory
   # NOTE you need to either specify NODE_PATH=. or Path.resolve a local directory for this to work
@@ -68,23 +68,28 @@ robot.adapter.once 'connected', ->
 robot.run()
 ```
 
-Open questions to answer:
-
-- should `loadScriptPackage` take a string to require, or expect a function? if it takes a function, that could be re-used more generally
-
 ## Detailed design
 
 > Describe the design of the solution in detail. The detail in this section should be sufficient for someone who is *not* one of the authors to be able to reasonably implement the feature.
 
-TODO
+Much of the logic for loading scripts is currently in `bin/hubot`. It should all be moved to `Robot`. You can see there are several `load` methods, `loadExternalScripts` which loads external scripts from packages, `loadScripts` which calls that plus loads scripts the `scripts` directory. 
 
-- update internals to remove assumptions about startup (ie not from bin/hubot)
+The `Robot` constructor current takes several positional arguments. This doesn't make initialzing the Robot simple, because it's not clear when initialzing what each argument is, especially when some are `false` or `null`. As part of this evolution, the constructor should take an object of options, so the object properties reflect what is being set. There is some validation already, but further validation will be needed to make sure required parameteres are passed it. It should be possible to make this backwards compatible by inspecting `arguments[0]`, and if it's an object, then it's this new style, otherwise use the old way of doing things.
+
+In addition, it might be helpful to be able to set parameters on new lines, rather than at `Robot` creation. In that case, the parameters shouldn't be required at startup, but at the time that `robot.run()` is called.
+
+In order to control the load order of scripts, there will need to be a new method, like `robot.loadPackage`. It would just `require` the pased in package name, then call it as a function with the current `robot`. This could be re-used in at least `robot.loadExternalScripts`.
+
+Here is a rough checklist of steps above. It should be possible to do in a number of PRs, rather than one big one.
+
+- [ ] move script-loading logic from `bin/hubot` to `Robot`, and update `bin/hubot` to call it
+- [ ] update internals to remove assumptions about startup (ie not from bin/hubot)
   - https://github.com/github/hubot/pull/1110 is a first attempt at it
   - it is mostly moving a lot of logic from `bin/hubot` into the `hubot` so it can be re-used
-- update APIs to easier, more obvious how they work, etc when running from a single file
+- [ ] update APIs to easier, more obvious how they work, etc when running from a single file
   - probably means `Robot` taking key/values, rather than positional arguments
   - make arguments/options to `Robot` constructor optional, but validate required options when `run`ning
-- update documentation for module usage
+- [ ] update documentation for module usage
 
 ## Backward compatibility
 

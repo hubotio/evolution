@@ -262,6 +262,8 @@ packages with `npm dist-tag add <package>@next latest`
 - [ ] Remove mention of CoffeeScript in [github/hubot.github.com](https://github.com/github/hubot.github.com) (currently private)
 - [ ] Add note for Debian & Ubuntu based Linux users to docs:
       [install latest Node.js](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+- [ ] Where can the README/docs for the current Hubot v2 remain accessible? See https://github.com/hubotio/evolution/pull/4#discussion_r119500396
+- [ ] Add documentation for developers of adapters and scripts. If they want to use modern es2015 classes, they must require hubot >= 3 in peerDependencies and `require('hubot/es2015')`. If they want to remain compatible with `hubot@2` then they can’t use es2015 classes. We should document that somewhere and explain it very clearly.
 
 ## Backward compatibility
 

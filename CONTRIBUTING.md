@@ -5,7 +5,7 @@
 
 This document outlines how a Hubot feature grows from a rough idea into something that can improve workflows for millions of developers.
 
-This process covers all changes to Hubot, such as new features or adding, changing, or removing any APIs (no matter how small). Smaller changes, such as bug fixes, optimizations, or other improvements can be contributed via the [normal contribution process](https://github/github/hubot/blob/master/CONTRIBUTING.md) on the relevant repository.
+This process covers all changes to Hubot, such as new features or adding, changing, or removing any APIs (no matter how small). Smaller changes, such as bug fixes, optimizations, or other improvements can be contributed via the [normal contribution process](https://github.com/hubotio/hubot/blob/master/CONTRIBUTING.md) on the relevant repository.
 
 ## Goals
 

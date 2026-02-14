@@ -26,8 +26,6 @@ The high-priority features for upcoming releases are:
 
 * **Multiple adapters and archetypes**: Adding support for multiple adapters in a single instance, and some notion of archetypes (chat, deployment, CI, github, etc) will allow Hubot scripts to become the glue between the various tools and systems in a developer's workflow.
 
-* **GitHub integration**: merge with [@probot](https://github.com/probot) and build out first-class support for GitHub.
-
 * **Improved chat client integration**: slash commands, rich messages, and interactive scripts on platforms that support it.
 
 ---
